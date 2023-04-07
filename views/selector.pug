@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome back to #{title} modifed by Teja Reddy Dasari
+  p
+    -let results =["goldenretriever.jpg","lab.jpg","pomeranian.jpg","poodle.jpg","pug.jpg"]
+    -for(var i=0;i<3; i++) {
+        -let r = Math.floor(Math.random()*5);
+        img(src=`/images/${results[r]}` alt=`${r}` style+'height:300px; width:300px')
+    -}
