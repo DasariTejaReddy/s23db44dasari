@@ -2,19 +2,16 @@ extends layout
 
 block content
   h1= title
-  - let myresults = [{Dogname:"Pug",dogsize:"small",dogcost:"1000$"},{Dogname:"labrador",dogsize:"medium",dogcost:"800$"},{Dogname:"poodle",dogsize:"large",dogcost:"700$"}]
+  -let result = results
   div(class="container-fluid")
     div(class="row")
-      each item,index in myresults
-        div(class="col-sm-2", onClick=`buy(${index})`)
-          p Name of the dog is #{item.Dogname}
-          p dog size is  #{item.dogsize}
-          p dog price is #{item.dogcost}
+       each item,index in result
+        div(class="col-sm-2",onClick=`buy(${index})`)
+          p Dogname:  #{item.Dogname}
+          p dogsize:  #{item.dogsize}
+          p dogcost:  #{item.dogcost}
   script.
-    function buy(P) {
-      P=P+1;
-      alert('You purchased item '+P);
-    } 
-
-
-
+    function buy(N) {
+      N=N+1;
+      alert('You purchased item '+N);
+    }
