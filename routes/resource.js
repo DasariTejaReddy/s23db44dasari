@@ -17,4 +17,6 @@ router.put('/Dogs/:id', Dogs_controller.Dogs_update_put);
 router.get('/Dogs/:id', Dogs_controller.Dogs_detail);
 // GET request for list of all Dogs items.
 router.get('/Dogs', Dogs_controller.Dogs_list);
+/* GET detail costume page */
+router.get('/detail', Dogs_controller.Dogs_view_one_Page);
 module.exports = router;
