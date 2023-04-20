@@ -7,7 +7,16 @@ a {
   color: #00B7FF;
 }
 .DogsAttr {
-  background-color: aquamarine;
+  background-color: rgb(255, 127, 144);
   width: 120px;
+  }
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
   

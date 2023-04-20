@@ -2,6 +2,10 @@ extends layout
 
 block content
  h1= title
+
+ if (toShow == null)
+    h2 No instance to delete 
+ else   
  - let Dogsid = toShow.id
  - let Dogname = toShow.Dogname
  - let dogsize = toShow.dogsize

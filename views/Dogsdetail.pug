@@ -1,20 +1,24 @@
 extends layout
 block content
     h1= title
-    - let Dogsid = toShow._id
-    - let Dogname = toShow.Dogname
-    - let dogsize = toShow.dogsize
-    - let dogcost = toShow.dogcost
-    div
-      div.row
-        div(class='DogsAttr mr-3') Dogs ID is:
-        div #{Dogsid}
-      div.row
-        div(class='DogsAttr mr-3') Dogs Dogname is:
-        div #{Dogname}
-      div.row
-        div(class='DogsAttr mr-3') Dogs dogsize is:
-        div #{dogsize}
-      div.row
-        div(class='DogsAttr mr-3') Dogs dogcost is:
-        div #{dogcost}
+
+    if (toShow == null)
+       h2 No instance to delete
+    else
+        - let Dogsid = toShow._id
+        - let Dogname = toShow.Dogname
+        - let dogsize = toShow.dogsize
+        - let dogcost = toShow.dogcost
+        div
+        div.row
+            div(class='DogsAttr mr-3') Dogs ID is:
+            div #{Dogsid}
+        div.row
+            div(class='DogsAttr mr-3') Dogs Dogname is:
+            div #{Dogname}
+        div.row
+            div(class='DogsAttr mr-3') Dogs dogsize is:
+            div #{dogsize}
+        div.row
+            div(class='DogsAttr mr-3') Dogs dogcost is:
+            div #{dogcost}
