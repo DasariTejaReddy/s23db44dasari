@@ -7,10 +7,10 @@ block content
             input#Dogname(type='text', name='Dogname')
         div.form-group
             label.DogsAttr(for='dogsize') shoe dogsize
-            input#dogsize(type='number', name='dogsize')
+            input#dogsize(type='text', name='dogsize')
         div.form-group
             label.DogsAttr(for='dogcost') shoe dogcost
-            input#dogcost(type='text', name='dogcost')
+            input#dogcost(type='number', name='dogcost')
         input(type="submit")
     script.
         document.forms['DogsForm'].addEventListener('submit', (event) => {
