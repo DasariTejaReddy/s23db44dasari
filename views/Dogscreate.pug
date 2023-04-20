@@ -3,13 +3,13 @@ block content
     h1= title
     form(id='DogsForm', action="/resource/Dogs", method="POST")
         div.form-group
-            label.DogsAttr(for='Dogname') shoe Dogname
+            label.DogsAttr(for='Dogname') Dogs Dogname
             input#Dogname(type='text', name='Dogname')
         div.form-group
-            label.DogsAttr(for='dogsize') shoe dogsize
+            label.DogsAttr(for='dogsize') Dogs dogsize
             input#dogsize(type='text', name='dogsize')
         div.form-group
-            label.DogsAttr(for='dogcost') shoe dogcost
+            label.DogsAttr(for='dogcost') Dogs dogcost
             input#dogcost(type='number', name='dogcost')
         input(type="submit")
     script.
