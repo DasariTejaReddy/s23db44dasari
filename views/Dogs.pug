@@ -1,17 +1,16 @@
 extends layout
 
 block content
+  - let earphones = results
   h1= title
-  -let result = results
   div(class="container-fluid")
-    div(class="row")
-      each item,index in result
-        div(class="col-sm-2",onClick=`buy(${index})`)
-          p Dogname:  #{item.Dogname}
-          p dogsize:  #{item.dogsize}
-          p dogcost:  #{item.dogcost}
+  div(class="row m-1")
+    each earphone in earphones
+      - let destination = `dispatch(\"/earphones/update?id=${earphone._id}\")`
+      div(class="row-sm-2", class="m-1") Earphone #{earphone.earphone_name}(#{earphone.earphone_shape}) is #{earphone.earphone_radius} 
+        button.btn( class="btn-primary ml-1", onclick= destination) Update
+
   script.
-    function buy(N) {
-      N=N+1;
-      alert('You purchased item '+N);
+    function dispatch(path){
+      window.location.href=path
     }
