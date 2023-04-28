@@ -1,16 +1,25 @@
 extends layout
 
 block content
-  - let earphones = results
+
+  - let image = results
   h1= title
+  - let create = `dispatch(\"/Dogs/create\")`
+  button.btn(class="btn-info", onclick=create) Add new Dogs
+
   div(class="container-fluid")
-  div(class="row m-1")
-    each earphone in earphones
-      - let destination = `dispatch(\"/earphones/update?id=${earphone._id}\")`
-      div(class="row-sm-2", class="m-1") Earphone #{earphone.earphone_name}(#{earphone.earphone_shape}) is #{earphone.earphone_radius} 
-        button.btn( class="btn-primary ml-1", onclick= destination) Update
+    div(class="row m-1")
+      each images in image
+        - let destination = `dispatch(\"/Dogs/update?id=${images._id}\")`
+        - let detail = `dispatch(\"/Dogs/detail/?id=${images._id}")`
+        - let deleteimages = `dispatch(\"/Dogs/delete/?id=${images._id}")`      
+        div(class="row-sm-2", class="m-1") 
+          | #{images.Dogname} (#{images.dogsize}) is #{images.dogcost}
+          button.btn(class="btn-primary ml-1", onclick=destination) Update
+          button.btn(class="btn-success", onclick=detail) Details
+          button.btn(class="btn-dark", onclick=deleteimages) Delete
 
   script.
     function dispatch(path){
-      window.location.href=path
+      window.location.href = path
     }
